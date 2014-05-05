@@ -200,11 +200,11 @@
 
 - (void)runCompletionBlock
 {
-	if(self.completionBlock != nil)
-	{
-		self.completionBlock();
-		self.completionBlock = nil;
-	}
+    if(self.completionBlock != nil)
+    {
+	self.completionBlock();
+	self.completionBlock = nil;
+    }
 }
 
 @end
