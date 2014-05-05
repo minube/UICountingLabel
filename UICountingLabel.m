@@ -184,14 +184,17 @@
     else
     {
         // check if counting with ints - cast to int
+        NSString *countString;
         if([self.format rangeOfString:@"%(.*)d" options:NSRegularExpressionSearch].location != NSNotFound || [self.format rangeOfString:@"%(.*)i"].location != NSNotFound )
         {
-            self.text = [NSString stringWithFormat:self.format,(int)value];
+            countString = [NSString stringWithFormat:self.format,(int)value];
         }
         else
         {
-            self.text = [NSString stringWithFormat:self.format,value];
+            countString = [NSString stringWithFormat:self.format,value];
         }
+        countString = [countString stringByReplacingOccurrencesOfString:@"." withString:@","];
+        self.text = countString;
     }
 }
 
